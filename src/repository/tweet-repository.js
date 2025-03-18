@@ -37,6 +37,15 @@ class TweetRepository {
             console.log(error);
         }
     }
+
+    async getAll(offset, limit) { //for pagination
+        try {
+            const tweet = await Tweet.find().skip(offset).limit(limit);//we have providied limit as '4' in index.js..this means 1st four objects will be printed
+            return tweet;
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = TweetRepository;

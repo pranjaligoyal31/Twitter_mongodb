@@ -21,9 +21,11 @@ app.listen(3000, async() => {
     console.log(tweets);
     const tweetRepo = new TweetRepository();
     //const tweet = await tweetRepo.get('67a0a4b87a7df2965c6dc39f');
-    const tweet = await tweetRepo.create({content: ' tweet with a comment'});
+    //const tweet = await tweetRepo.create({content: ' tweet with a comment'});
+    //console.log(tweet);
+    //tweet.comments.push({content: 'first comment here'});
+    //await tweet.save();
+    const tweet = await tweetRepo.getAll(2,4);
     console.log(tweet);
-    tweet.comments.push({content: 'first comment here'});
-    await tweet.save();
-    console.log(tweet);
+    //console.log(tweet[0]._id); -->printing id of the object
 });
